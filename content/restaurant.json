@@ -1,0 +1,26 @@
+{
+  "name": "Meat Carnival",
+  "address": "Pakoštanska ul. 5, 10000 Zagreb (Jarun)",
+  "phone": "097 612 7608",
+  "rating": "4,6",
+  "reviewCount": 210,
+  "lateNightNote": "Petkom i subotom do 02:00",
+  "mapsUrl": "https://www.google.com/maps/place/Meat+Carnival/@45.7898902,15.9293734,19z/data=!4m6!3m5!1s0x4765d77fc2478547:0xe1fa7602e9ed3abb!8m2!3d45.7899076!4d15.9293653!16s%2Fg%2F11tf3w5p5y",
+  "mapsEmbedUrl": "https://www.google.com/maps?q=Meat+Carnival,+Pako%C5%A1tanska+ul.+5,+10000+Zagreb&output=embed",
+  "woltUrl": "https://wolt.com/hr/hrv/zagreb/restaurant/meat-carnival",
+  "glovoUrl": "https://glovoapp.com/hr/hr/zagreb/stores/meat-carnival",
+  "instagramUrl": "https://www.instagram.com/meatcarnivalhr/",
+  "hours": {
+    "unconfirmed": true,
+    "rows": [
+      { "days": "Ponedjeljak – Četvrtak", "time": "10:00 – 24:00" },
+      { "days": "Petak – Subota", "time": "10:00 – 02:00" },
+      { "days": "Nedjelja", "time": "10:00 – 24:00" }
+    ]
+  },
+  "review": {
+    "show": true,
+    "text": "Odlična pečenjara! Hrana je uvijek ukusna, a lepinja savršena.",
+    "author": "Petra — Google recenzija"
+  }
+}

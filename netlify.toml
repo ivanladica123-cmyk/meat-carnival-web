@@ -1,0 +1,16 @@
+# Netlify configuration — Meat Carnival (Vite + React)
+# If the Git repository root is the folder ABOVE meat-carnival-web, set
+# "Base directory" to "meat-carnival-web" in Netlify UI (or add base = "meat-carnival-web").
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# /admin is a static folder copied from public/ — no SPA redirect needed for it.
+# The site itself is a single page; no client-side routes exist, so a catch-all
+# SPA redirect is unnecessary and would only mask genuine 404s.
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

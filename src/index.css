@@ -1,0 +1,268 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource/alfa-slab-one/400.css";
+@import "@fontsource/barlow/400.css";
+@import "@fontsource/barlow/500.css";
+@import "@fontsource/barlow/600.css";
+@import "@fontsource/barlow-condensed/500.css";
+@import "@fontsource/barlow-condensed/600.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Meat Carnival design tokens.
+  Source of truth: ../design-tokens.json + DESIGN_BLUEPRINT.md §5.2, §6.
+  color.canvas      #FAF6EF -> --background
+  color.ink         #1C1512 -> --foreground
+  color.brand.red   #C8262C -> --primary
+  color.brand.redDeep #A31B20 -> --destructive, small brand text, light-surface focus ring
+  color.brand.gold  #F0A81C -> --gold (accent; never text on light grounds)
+  color.surface.dark #211A16 -> --surface-dark (.section-dark scope)
+  color.surface.burgundy #7E2D40 -> --burgundy
+  color.accent.wood #8A5A33 / #4A3526 -> --wood / --wood-dark (borders, dividers)
+*/
+
+@theme inline {
+    /* Rye lacks Croatian diacritics (Č Ć Đ Š Ž rendered from fallback);
+       blueprint §9.3 contingency: Alfa Slab One is the primary display face. */
+    --font-display: "Alfa Slab One", serif;
+    --font-heading: "Barlow Condensed", "Arial Narrow", sans-serif;
+    --font-sans: "Barlow", "Segoe UI", sans-serif;
+    --color-gold: var(--gold);
+    --color-red-deep: var(--red-deep);
+    --color-surface-dark: var(--surface-dark);
+    --color-burgundy: var(--burgundy);
+    --color-wood: var(--wood);
+    --color-wood-dark: var(--wood-dark);
+    --color-success: var(--success);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    /* brand */
+    --gold: #f0a81c;
+    --red-deep: #a31b20;
+    --surface-dark: #211a16;
+    --burgundy: #7e2d40;
+    --wood: #8a5a33;
+    --wood-dark: #4a3526;
+    --success: #2e7d4f;
+    /* semantic (light / canvas context) */
+    --background: #faf6ef;
+    --foreground: #1c1512;
+    --card: #fffdf8;
+    --card-foreground: #1c1512;
+    --popover: #fffdf8;
+    --popover-foreground: #1c1512;
+    --primary: #c8262c;
+    --primary-foreground: #faf6ef;
+    --secondary: #f1e8d8;
+    --secondary-foreground: #1c1512;
+    --muted: #f2ebdd;
+    --muted-foreground: #675947;
+    --accent: #f1e8d8;
+    --accent-foreground: #1c1512;
+    --destructive: #a31b20;
+    --border: #e2d3bd;
+    --input: #d9c6ae;
+    /* Blueprint §5.9 specifies a gold focus ring; gold fails 3:1 on cream, so
+       light surfaces use red-deep and .section-dark restores gold. (Deviation D1) */
+    --ring: #a31b20;
+    --chart-1: #c8262c;
+    --chart-2: #f0a81c;
+    --chart-3: #7e2d40;
+    --chart-4: #8a5a33;
+    --chart-5: #211a16;
+    --radius: 0.625rem;
+    --sidebar: #faf6ef;
+    --sidebar-foreground: #1c1512;
+    --sidebar-primary: #c8262c;
+    --sidebar-primary-foreground: #faf6ef;
+    --sidebar-accent: #f1e8d8;
+    --sidebar-accent-foreground: #1c1512;
+    --sidebar-border: #e2d3bd;
+    --sidebar-ring: #a31b20;
+}
+
+/* Dark bands (hero, footer): token scope, not a user theme.
+   Blueprint rule: dark sections always carry photography or the mascot. */
+.section-dark {
+    --background: #211a16;
+    --foreground: #faf6ef;
+    --card: #2c231d;
+    --card-foreground: #faf6ef;
+    --popover: #2c231d;
+    --popover-foreground: #faf6ef;
+    --primary: #c8262c;
+    --primary-foreground: #faf6ef;
+    --secondary: #3a2e25;
+    --secondary-foreground: #faf6ef;
+    --muted: #2c231d;
+    --muted-foreground: #c9b9a4;
+    --accent: #3a2e25;
+    --accent-foreground: #faf6ef;
+    --border: #4a3526;
+    --input: #4a3526;
+    --ring: #f0a81c;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+.dark {
+    /* Site ships light-only (blueprint defines no dark page theme);
+       kept aligned with .section-dark so nothing breaks if toggled. */
+    --background: #211a16;
+    --foreground: #faf6ef;
+    --card: #2c231d;
+    --card-foreground: #faf6ef;
+    --popover: #2c231d;
+    --popover-foreground: #faf6ef;
+    --primary: #c8262c;
+    --primary-foreground: #faf6ef;
+    --secondary: #3a2e25;
+    --secondary-foreground: #faf6ef;
+    --muted: #2c231d;
+    --muted-foreground: #c9b9a4;
+    --accent: #3a2e25;
+    --accent-foreground: #faf6ef;
+    --destructive: #e05252;
+    --border: #4a3526;
+    --input: #4a3526;
+    --ring: #f0a81c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans scroll-smooth;
+    }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  ::selection {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+@layer utilities {
+  /* Blueprint §5.9: guaranteed visible focus — 3px ring, 2px offset, token-driven
+     (red-deep on light surfaces, gold inside .section-dark; see deviation D1).
+     !important so component-level `outline-none` cannot suppress it. */
+  *:focus-visible {
+    outline: 3px solid var(--ring) !important;
+    outline-offset: 2px;
+  }
+  /* Display type: Rye, hero + top-level section titles only (blueprint rule 2) */
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  /* Spaced-caps register from the sign labels (E3): Barlow Condensed, +0.06em */
+  .caps-label {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .price {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+
+  /* Hover micro-interactions (blueprint §5.10: 150–250ms, subtle). All of these
+     are transform/opacity-only and are neutralized by the reduced-motion block
+     above (transition-duration collapses to 0.01ms → instant state change). */
+  [data-slot="button"] {
+    transition-property: color, background-color, border-color, box-shadow, transform;
+    transition-duration: 180ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [data-slot="button"]:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+  [data-slot="button"]:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+  }
+  /* Nav link underline: gold line slides in from the left on hover/focus. */
+  .nav-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 calc(100% - 0.55em);
+    background-size: 0% 2px;
+    transition: background-size 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .nav-underline:hover,
+  .nav-underline:focus-visible {
+    background-size: 100% 2px;
+  }
+
+  /* Scroll-into-view reveal. Hidden state is added by JS only (see reveal.tsx),
+     so content is visible without JS. Only .reveal-in carries the transition,
+     so applying the hidden state does not animate a flash-out. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  .reveal-in {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+}

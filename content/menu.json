@@ -1,0 +1,229 @@
+{
+  "categories": [
+    {
+      "id": "kebab",
+      "label": "Kebab",
+      "items": [
+        {
+          "name": "Kebab tortilja",
+          "description": "Umak i prilozi po izboru, veličina porcije po izboru",
+          "price": 9.4,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Kebab lepinja",
+          "description": "Umak i prilozi po izboru, veličina porcije po izboru",
+          "price": 9.4,
+          "popular": true,
+          "available": true,
+          "featured": true,
+          "featuredBlurb": "Domaća lepinja, umak i prilozi po izboru"
+        }
+      ]
+    },
+    {
+      "id": "burgeri-junetina",
+      "label": "Burgeri · Junetina",
+      "note": "Sve juneće pljeskavice: 100 % junetina s hrvatskih farmi (150 g)",
+      "items": [
+        {
+          "name": "American burger",
+          "description": "Honey mustard, zelena salata, rajčica, kiseli krastavci, jaje, slanina, cheddar",
+          "price": 9.5,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "BBQ Bacon burger",
+          "description": "BBQ umak, majoneza, zelena salata, prženi luk, slanina, cheddar",
+          "price": 9,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Carnival Cheese burger",
+          "description": "Carnival umak, zelena salata, rajčica, kiseli krastavci, karamelizirani luk, cheddar",
+          "price": 8.5,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Carnival burger",
+          "description": "Carnival umak, zelena salata, rajčica, kiseli krastavci, karamelizirani luk",
+          "price": 8,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "4 of a Kind burger",
+          "description": "Carnival umak, svježi luk, ukiseljeni luk, prženi luk, karamelizirani luk",
+          "price": 8,
+          "popular": false,
+          "available": true,
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "burgeri-piletina",
+      "label": "Burgeri · Piletina",
+      "items": [
+        {
+          "name": "BBQ chicken burger",
+          "description": "Premium pohana piletina, BBQ umak, majoneza, zelena salata, cheddar",
+          "price": 8,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Carnival chicken burger",
+          "description": "Premium pohana piletina, Carnival umak, zelena salata, rajčica, kiseli krastavci, karamelizirani luk",
+          "price": 8,
+          "popular": false,
+          "available": true,
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "burgeri-divljac",
+      "label": "Burgeri · Divljač",
+      "items": [
+        {
+          "name": "Hunters burger",
+          "description": "Jelenja pljeskavica hrvatskih šuma (200 g), Carnival umak s dodatkom šljiva odležanih u konjaku, matovilac, karamelizirani luk, suhe šljive",
+          "price": 11,
+          "popular": true,
+          "available": true,
+          "featured": true,
+          "featuredBlurb": "Jelenja pljeskavica (200 g) i Carnival umak sa šljivama iz konjaka"
+        }
+      ]
+    },
+    {
+      "id": "grill",
+      "label": "Grill ponuda",
+      "items": [
+        {
+          "name": "Carnival plata",
+          "description": "10× ćevapi, 3× šiš ćevapi, punjena pljeskavica, pljeskavica, 2× umak po izboru, 2× lepinja, 2× pommes frites ili pekarski krumpir po izboru",
+          "price": 45,
+          "popular": false,
+          "available": true,
+          "featured": true,
+          "featuredBlurb": "Plata za društvo: ćevapi, šiš ćevapi, pljeskavice i prilozi"
+        },
+        {
+          "name": "Mesni mix",
+          "description": "5× ćevapi, šiš ćevap, pljeskavica, lepinja, luk, umak po izboru, pommes frites ili pekarski krumpir",
+          "price": 18,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Punjena pljeskavica",
+          "description": "Pljeskavica punjena kajmakom, lepinja, luk",
+          "price": 12,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Šiš ćevapi",
+          "description": "3× šiš ćevapi, lepinja, luk",
+          "price": 10.9,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Ćevapi veliki",
+          "description": "10× ćevapi, lepinja, luk",
+          "price": 10.9,
+          "popular": true,
+          "available": true,
+          "featured": true,
+          "featuredBlurb": "10 ćevapa, lepinja, luk — klasika s roštilja"
+        },
+        {
+          "name": "Pljeskavica",
+          "description": "Pljeskavica (300 g), lepinja, luk",
+          "price": 10.9,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Ćevapi mali",
+          "description": "5× (185 g) ili 10× (350 g) ćevapi po izboru, lepinja, luk",
+          "price": 7.6,
+          "popular": false,
+          "available": true,
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "salate",
+      "label": "Salate",
+      "items": [
+        {
+          "name": "Šopska salata",
+          "description": "Rajčica, svježi krastavci, paprika, feta sir",
+          "price": 5.5,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Sezonska salata",
+          "description": "Rajčica, kupus salata",
+          "price": 3.5,
+          "popular": false,
+          "available": true,
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "prilozi",
+      "label": "Prilozi i umaci",
+      "items": [
+        { "name": "Batat", "price": 4, "popular": false, "available": true, "featured": false },
+        { "name": "Onion rings", "price": 3.5, "popular": false, "available": true, "featured": false },
+        { "name": "Pekarski krumpir", "price": 3.5, "popular": false, "available": true, "featured": false },
+        { "name": "Pommes frites", "price": 3, "popular": true, "available": true, "featured": false },
+        { "name": "Lepinja", "price": 2, "popular": false, "available": true, "featured": false },
+        { "name": "Kajmak", "price": 1.7, "popular": false, "available": true, "featured": false },
+        { "name": "Ajvar", "price": 1.7, "popular": false, "available": true, "featured": false },
+        { "name": "BBQ umak", "price": 1.1, "popular": false, "available": true, "featured": false },
+        { "name": "Carnival umak", "price": 1, "popular": false, "available": true, "featured": false },
+        { "name": "Blagi umak", "price": 1, "popular": false, "available": true, "featured": false },
+        { "name": "Ljuti umak", "price": 1, "popular": false, "available": true, "featured": false },
+        { "name": "Slatko-kiseli umak", "price": 1, "popular": false, "available": true, "featured": false }
+      ]
+    },
+    {
+      "id": "pica",
+      "label": "Pića",
+      "note": "Zakonom propisana minimalna dob za kupovinu alkoholnih pića u RH je 18 godina.",
+      "items": [
+        { "name": "Coca-Cola 0,5 l", "price": 2.9, "popular": false, "available": true, "featured": false },
+        { "name": "Fanta Orange 0,5 l", "price": 2.9, "popular": false, "available": true, "featured": false },
+        { "name": "Sprite 0,5 l", "price": 2.9, "popular": false, "available": true, "featured": false },
+        { "name": "Fuze Tea Peach & Hibiscus 0,5 l", "price": 2.9, "popular": false, "available": true, "featured": false },
+        { "name": "Heineken 0,33 l", "price": 4, "popular": false, "available": true, "featured": false, "note": "18+" },
+        { "name": "Zlatni medvjed 0,5 l", "price": 4, "popular": false, "available": true, "featured": false, "note": "18+" },
+        { "name": "Jelen pivo 0,5 l", "price": 3.1, "popular": false, "available": true, "featured": false, "note": "18+" }
+      ]
+    }
+  ]
+}

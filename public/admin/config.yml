@@ -1,0 +1,139 @@
+# Decap CMS konfiguracija — Meat Carnival
+# Backend: GitHub (Netlify Git Gateway je Netlify službeno napustio).
+# Autentikacija ide preko GitHub OAuth aplikacije; Netlify služi samo kao
+# OAuth posrednik (callback https://api.netlify.com/auth/done).
+# U ovoj datoteci NEMA tajni — Client Secret se unosi isključivo u Netlify.
+
+backend:
+  name: github
+  repo: ivanladica123-cmyk/meat-carnival-web
+  branch: main
+
+# Sadržaj se objavljuje odmah nakon "Publish" (bez draft tijeka rada,
+# najjednostavnije za jednog vlasnika).
+publish_mode: simple
+
+media_folder: "public/images/menu"
+public_folder: "/images/menu"
+
+site_url: /
+display_url: /
+logo_url: /logo.png
+
+collections:
+  - name: "sadrzaj"
+    label: "Sadržaj stranice"
+    files:
+      - file: "content/menu.json"
+        name: "jelovnik"
+        label: "Jelovnik"
+        format: "json"
+        fields:
+          - name: "categories"
+            label: "Kategorije"
+            label_singular: "Kategorija"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - name: "id"
+                label: "Tehnička oznaka (ne mijenjati)"
+                widget: "string"
+                hint: "Poveznica navigacije — promjena ruši skok na kategoriju i sliku pločice."
+              - name: "label"
+                label: "Naziv kategorije"
+                widget: "string"
+              - name: "note"
+                label: "Napomena kategorije"
+                widget: "string"
+                required: false
+                hint: "Npr. porijeklo mesa ili zakonska napomena o alkoholu."
+              - name: "items"
+                label: "Proizvodi"
+                label_singular: "Proizvod"
+                widget: "list"
+                summary: "{{fields.name}} — {{fields.price}} €"
+                fields:
+                  - name: "name"
+                    label: "Naziv proizvoda"
+                    widget: "string"
+                  - name: "description"
+                    label: "Opis"
+                    widget: "text"
+                    required: false
+                  - name: "price"
+                    label: "Cijena (€)"
+                    widget: "number"
+                    value_type: "float"
+                    step: 0.1
+                    min: 0
+                    hint: "Samo broj, npr. 9.4 — na stranici se prikazuje kao 9,40 €."
+                  - name: "popular"
+                    label: "Popularno"
+                    widget: "boolean"
+                    default: false
+                    required: false
+                  - name: "available"
+                    label: "Dostupno"
+                    widget: "boolean"
+                    default: true
+                    required: false
+                    hint: "Isključite kad proizvoda privremeno nema — nestaje s jelovnika."
+                  - name: "featured"
+                    label: "Istaknuto na naslovnici"
+                    widget: "boolean"
+                    default: false
+                    required: false
+                    hint: "Prikazuje proizvod u redu 'Najtraženije' na vrhu stranice."
+                  - name: "featuredBlurb"
+                    label: "Kratki opis za naslovnicu"
+                    widget: "string"
+                    required: false
+                  - name: "image"
+                    label: "Fotografija"
+                    widget: "image"
+                    required: false
+                  - name: "note"
+                    label: "Oznaka (npr. 18+)"
+                    widget: "string"
+                    required: false
+
+      - file: "content/restaurant.json"
+        name: "restoran"
+        label: "Podaci o restoranu"
+        format: "json"
+        fields:
+          - { name: "name", label: "Naziv restorana", widget: "string" }
+          - { name: "address", label: "Adresa", widget: "string" }
+          - { name: "phone", label: "Telefon", widget: "string", hint: "Npr. 097 612 7608 — poziv se slaže automatski." }
+          - { name: "rating", label: "Google ocjena", widget: "string", required: false, hint: "Npr. 4,6 — prepišite s Google profila." }
+          - { name: "reviewCount", label: "Broj Google recenzija", widget: "number", value_type: "int", required: false }
+          - { name: "lateNightNote", label: "Napomena o kasnom radu (naslovnica)", widget: "string", required: false }
+          - { name: "mapsUrl", label: "Google Maps poveznica", widget: "string" }
+          - { name: "mapsEmbedUrl", label: "Google Maps karta (embed)", widget: "string", required: false, hint: "Adresa karte u podnožju. Ne mijenjajte bez potrebe." }
+          - { name: "woltUrl", label: "Wolt poveznica", widget: "string", required: false }
+          - { name: "glovoUrl", label: "Glovo poveznica", widget: "string", required: false }
+          - { name: "instagramUrl", label: "Instagram poveznica", widget: "string", required: false }
+          - name: "hours"
+            label: "Radno vrijeme"
+            widget: "object"
+            fields:
+              - name: "unconfirmed"
+                label: "Prikaži napomenu 'podložno potvrdi'"
+                widget: "boolean"
+                default: false
+                required: false
+              - name: "rows"
+                label: "Termini"
+                label_singular: "Termin"
+                widget: "list"
+                summary: "{{fields.days}}: {{fields.time}}"
+                fields:
+                  - { name: "days", label: "Dani", widget: "string" }
+                  - { name: "time", label: "Vrijeme", widget: "string" }
+          - name: "review"
+            label: "Recenzija gosta"
+            widget: "object"
+            fields:
+              - { name: "show", label: "Prikaži recenziju", widget: "boolean", default: false, required: false }
+              - { name: "text", label: "Tekst recenzije", widget: "text", required: false }
+              - { name: "author", label: "Autor recenzije", widget: "string", required: false }
