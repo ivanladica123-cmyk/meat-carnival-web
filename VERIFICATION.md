@@ -1,5 +1,19 @@
 # Meat Carnival website — build verification report
 
+## Bug fix: invisible Jelovnik on mobile (2026-07-12, owner-reported)
+**Symptom:** whole menu section white on phones. **Root cause:** `Reveal` used
+`IntersectionObserver` with `threshold: 0.15` — a *ratio* threshold. The mobile
+menu wrapper is ~4700px tall (1-col layout + images), so at a ~844px viewport
+the max achievable ratio is ~0.17, and after the -8% rootMargin / narrower
+phones it drops **below 0.15 → the observer can never fire → section stuck at
+opacity 0**. Desktop was unaffected (4-col layout keeps the section short).
+**Fix:** `threshold: 0` (first-pixel trigger, height-independent) + a
+belt-and-braces passive scroll/resize rect-check fallback with the same
+geometry (top < 88% viewport), one-time and self-cleaning. **Verified at
+390×844 with dispatched scroll events: all five wrappers, including
+`#jelovnik`, gain `.reveal-in`; in-view sections reveal at mount.** The scroll
+fallback is height-independent, covering 320/375px by construction.
+
 ## CMS auth backend: GitHub, not Git Gateway (2026-07-12)
 Git Gateway is deprecated, so the Decap backend is `github` →
 `ivanladica123-cmyk/meat-carnival-web` @ `main`. Netlify Identity scripts

@@ -33,40 +33,64 @@ export function Reveal({
     let done = false
     let io: IntersectionObserver | undefined
     let timer = 0
+    const onScrollCheck = () => {
+      if (done) return
+      const r = el.getBoundingClientRect()
+      // reveal once the section's top enters the lower 88% of the viewport
+      // (or is already above it), or its bottom is on screen
+      if (r.top < window.innerHeight * 0.88 && r.bottom > 0) animateIn()
+    }
+    const cleanupScroll = () => {
+      window.removeEventListener("scroll", onScrollCheck)
+      window.removeEventListener("resize", onScrollCheck)
+    }
+    function animateIn() {
+      if (done) return
+      done = true
+      el!.classList.add("reveal-in")
+      io?.disconnect()
+      cleanupScroll()
+    }
     try {
       el.classList.add("reveal")
-      const animateIn = () => {
-        if (done) return
-        done = true
-        el.classList.add("reveal-in")
-      }
+      // Primary: IntersectionObserver with threshold 0 (first visible pixel),
+      // NOT a ratio: a ratio threshold can be unreachable for sections taller
+      // than the viewport (the mobile menu is ~5× viewport height → max ratio
+      // ~0.17, so the old 0.15 never fired on narrow phones and the menu
+      // stayed invisible). The -12% rootMargin delays the reveal until the
+      // section meaningfully enters view.
       io = new IntersectionObserver(
         (entries) => {
           for (const e of entries) {
-            if (e.isIntersecting) {
-              animateIn()
-              io?.disconnect()
-            }
+            if (e.isIntersecting) animateIn()
           }
         },
-        { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+        { threshold: 0, rootMargin: "0px 0px -12% 0px" },
       )
       io.observe(el)
-      // Fallback for in-view elements that never received an IO callback.
+      // Belt-and-braces: a plain scroll/resize rect check with the same
+      // trigger geometry. Costs one getBoundingClientRect per event until the
+      // one-time reveal, and guarantees the reveal even where IO under-delivers.
+      window.addEventListener("scroll", onScrollCheck, { passive: true })
+      window.addEventListener("resize", onScrollCheck)
+      onScrollCheck() // already in view at mount → reveal immediately
+      // Last resort for in-view elements if neither path ran.
       timer = window.setTimeout(() => {
         if (done) return
         const r = el.getBoundingClientRect()
-        const inView = r.top < window.innerHeight && r.bottom > 0
-        if (inView) {
+        if (r.top < window.innerHeight && r.bottom > 0) {
           done = true
           el.classList.remove("reveal") // instant visible, no transition dependency
+          cleanupScroll()
         }
       }, 2500)
     } catch {
       el.classList.remove("reveal") // any failure → visible
+      cleanupScroll()
     }
     return () => {
       io?.disconnect()
+      cleanupScroll()
       window.clearTimeout(timer)
     }
   }, [])
