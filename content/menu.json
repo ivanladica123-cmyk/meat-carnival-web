@@ -7,7 +7,7 @@
         {
           "name": "Kebab tortilja",
           "description": "Umak i prilozi po izboru, veličina porcije po izboru",
-          "price": 9.4,
+          "price": 9.5,
           "popular": false,
           "available": true,
           "featured": false
@@ -197,18 +197,90 @@
       "id": "prilozi",
       "label": "Prilozi i umaci",
       "items": [
-        { "name": "Batat", "price": 4, "popular": false, "available": true, "featured": false },
-        { "name": "Onion rings", "price": 3.5, "popular": false, "available": true, "featured": false },
-        { "name": "Pekarski krumpir", "price": 3.5, "popular": false, "available": true, "featured": false },
-        { "name": "Pommes frites", "price": 3, "popular": true, "available": true, "featured": false },
-        { "name": "Lepinja", "price": 2, "popular": false, "available": true, "featured": false },
-        { "name": "Kajmak", "price": 1.7, "popular": false, "available": true, "featured": false },
-        { "name": "Ajvar", "price": 1.7, "popular": false, "available": true, "featured": false },
-        { "name": "BBQ umak", "price": 1.1, "popular": false, "available": true, "featured": false },
-        { "name": "Carnival umak", "price": 1, "popular": false, "available": true, "featured": false },
-        { "name": "Blagi umak", "price": 1, "popular": false, "available": true, "featured": false },
-        { "name": "Ljuti umak", "price": 1, "popular": false, "available": true, "featured": false },
-        { "name": "Slatko-kiseli umak", "price": 1, "popular": false, "available": true, "featured": false }
+        {
+          "name": "Batat",
+          "price": 4,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Onion rings",
+          "price": 3.5,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Pekarski krumpir",
+          "price": 3.5,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Pommes frites",
+          "price": 3,
+          "popular": true,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Lepinja",
+          "price": 2,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Kajmak",
+          "price": 1.7,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Ajvar",
+          "price": 1.7,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "BBQ umak",
+          "price": 1.1,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Carnival umak",
+          "price": 1,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Blagi umak",
+          "price": 1,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Ljuti umak",
+          "price": 1,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Slatko-kiseli umak",
+          "price": 1,
+          "popular": false,
+          "available": true,
+          "featured": false
+        }
       ]
     },
     {
@@ -216,13 +288,58 @@
       "label": "Pića",
       "note": "Zakonom propisana minimalna dob za kupovinu alkoholnih pića u RH je 18 godina.",
       "items": [
-        { "name": "Coca-Cola 0,5 l", "price": 2.9, "popular": false, "available": true, "featured": false },
-        { "name": "Fanta Orange 0,5 l", "price": 2.9, "popular": false, "available": true, "featured": false },
-        { "name": "Sprite 0,5 l", "price": 2.9, "popular": false, "available": true, "featured": false },
-        { "name": "Fuze Tea Peach & Hibiscus 0,5 l", "price": 2.9, "popular": false, "available": true, "featured": false },
-        { "name": "Heineken 0,33 l", "price": 4, "popular": false, "available": true, "featured": false, "note": "18+" },
-        { "name": "Zlatni medvjed 0,5 l", "price": 4, "popular": false, "available": true, "featured": false, "note": "18+" },
-        { "name": "Jelen pivo 0,5 l", "price": 3.1, "popular": false, "available": true, "featured": false, "note": "18+" }
+        {
+          "name": "Coca-Cola 0,5 l",
+          "price": 2.9,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Fanta Orange 0,5 l",
+          "price": 2.9,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Sprite 0,5 l",
+          "price": 2.9,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Fuze Tea Peach & Hibiscus 0,5 l",
+          "price": 2.9,
+          "popular": false,
+          "available": true,
+          "featured": false
+        },
+        {
+          "name": "Heineken 0,33 l",
+          "price": 4,
+          "popular": false,
+          "available": true,
+          "featured": false,
+          "note": "18+"
+        },
+        {
+          "name": "Zlatni medvjed 0,5 l",
+          "price": 4,
+          "popular": false,
+          "available": true,
+          "featured": false,
+          "note": "18+"
+        },
+        {
+          "name": "Jelen pivo 0,5 l",
+          "price": 3.1,
+          "popular": false,
+          "available": true,
+          "featured": false,
+          "note": "18+"
+        }
       ]
     }
   ]
