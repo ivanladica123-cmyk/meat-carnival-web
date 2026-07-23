@@ -9,6 +9,11 @@ backend:
   repo: ivanladica123-cmyk/meat-carnival-web
   branch: main
 
+# Lokalno testiranje bez OAuth-a: pokreni `npx decap-server` pa otvori /admin.
+# Na deployanoj stranici je bezopasno — aktivira se samo ako je lokalni proxy
+# dostupan (nikad u produkciji).
+local_backend: true
+
 # Sadržaj se objavljuje odmah nakon "Publish" (bez draft tijeka rada,
 # najjednostavnije za jednog vlasnika).
 publish_mode: simple

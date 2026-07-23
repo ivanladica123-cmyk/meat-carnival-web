@@ -8,7 +8,10 @@
     <title>Uređivanje sadržaja — Meat Carnival</title>
   </head>
   <body>
-    <!-- Decap CMS. Auth = GitHub backend (see config.yml). No Netlify Identity. -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Decap CMS. Auth = GitHub backend (see config.yml). No Netlify Identity.
+         Version PINNED: floating ^3.0.0 auto-upgraded to 3.15.0, which crashes
+         the entry editor (React #130). Pin a known-good build; bump manually
+         only after testing. -->
+    <script src="https://unpkg.com/decap-cms@3.14.1/dist/decap-cms.js"></script>
   </body>
 </html>
