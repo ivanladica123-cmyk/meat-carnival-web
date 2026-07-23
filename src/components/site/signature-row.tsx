@@ -19,7 +19,7 @@ export function SignatureRow() {
         <SectionHeading
           id="signature-title"
           kicker="Najtraženije"
-          title="Kuća časti preporukom"
+          title="Ljubimci gostiju"
         />
         <ul className="grid list-none grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {signatureItems.map((item) => (

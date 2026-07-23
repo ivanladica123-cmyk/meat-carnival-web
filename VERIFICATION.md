@@ -1,5 +1,25 @@
 # Meat Carnival website — build verification report
 
+## Content-accuracy fixes before client meeting (2026-07-12, owner-reported)
+Verified in-browser (DOM) at localhost; `tsc -b` + build clean; no console errors.
+1. **Hardcoded Google rating removed.** `rating` "4,6" + `reviewCount` 210 deleted
+   from `restaurant.json`, the `business` normalizer, and the CMS fields. Hero
+   chip now reads **"Recenzije na Googleu"** (star kept) and links to the live
+   Google profile — no number to go stale. (Live Places API rejected: needs a
+   billed key + serverless proxy on a static site.)
+2. **Wolt-price disclaimers removed.** Deleted the menu "Cijene preuzete s
+   Wolta (11. 7. 2026.)…" line and the footer "Cijene prema Wolt ponudi" line.
+   The menu no longer tells guests its prices are the (higher) Wolt prices; the
+   owner sets real in-store prices via `/admin`. Kept the honest order-panel
+   note that *delivery* prices on Wolt/Glovo may differ from in-store.
+3. **"…u potvrdi kod vlasnika" gone** (removed with the Wolt line); the sibling
+   "podložno potvrdi vlasnika" footer note deleted and the terrace note reworded
+   to "Radno vrijeme može se razlikovati za blagdane…" (no "unofficial" tell).
+   CMS toggle label updated to match.
+4. **"Kuća časti preporukom" → "Ljubimci gostiju"** (old phrase reads as "on the
+   house / free" in Croatian).
+5. Footer year made dynamic (`new Date().getFullYear()`).
+
 ## Bug fix: invisible Jelovnik on mobile (2026-07-12, owner-reported)
 **Symptom:** whole menu section white on phones. **Root cause:** `Reveal` used
 `IntersectionObserver` with `threshold: 0.15` — a *ratio* threshold. The mobile

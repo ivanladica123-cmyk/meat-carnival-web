@@ -98,7 +98,7 @@ export function Hero() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
-          {business.rating && business.mapsUrl && (
+          {business.mapsUrl && (
             <a
               href={business.mapsUrl}
               target="_blank"
@@ -106,9 +106,8 @@ export function Hero() {
               className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-wood-dark bg-black/20 px-4 text-[#e8ddcc] transition-colors hover:text-gold focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
             >
               <StarIcon aria-hidden="true" className="size-4 fill-gold text-gold" />
-              <span>
-                {business.rating} ({business.reviewCount} recenzija na Googleu)
-              </span>
+              {/* Rating shown live on Google, not hardcoded here (would go stale). */}
+              <span>Recenzije na Googleu</span>
             </a>
           )}
           {business.lateNightNote && (

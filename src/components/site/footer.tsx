@@ -93,17 +93,12 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          {hours.placeholder && (
-            <p className="text-xs text-[#c9b9a4]">* podložno potvrdi vlasnika</p>
-          )}
         </div>
       </div>
 
       <Separator className="bg-wood-dark" />
       <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-2 px-6 py-6 text-center text-xs text-[#c9b9a4] lg:px-8">
-        <p>
-          © 2026 Meat Carnival · Cijene prema Wolt ponudi (11.&nbsp;7.&nbsp;2026.)
-        </p>
+        <p>© {new Date().getFullYear()} Meat Carnival</p>
         <p>
           Alkoholna pića prodajemo samo osobama starijim od 18 godina.
         </p>

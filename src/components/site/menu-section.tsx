@@ -96,11 +96,6 @@ export function MenuSection() {
             ))}
         </div>
 
-        <p className="mx-auto max-w-3xl text-center text-xs text-muted-foreground">
-          Cijene preuzete s Wolta (11.&nbsp;7.&nbsp;2026.). Cijene u lokalu
-          mogu se razlikovati — u potvrdi kod vlasnika.
-        </p>
-
         {/* Order panel (blueprint §5.8) */}
         <div className="section-dark mx-auto flex w-full max-w-3xl flex-col items-center gap-4 rounded-xl px-6 py-8 text-center">
           <h3 className="font-display text-xl text-[#faf6ef]">Gladan? Riješimo to.</h3>

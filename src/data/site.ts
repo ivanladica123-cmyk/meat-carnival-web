@@ -93,8 +93,6 @@ export const business = {
   address: typeof r.address === "string" ? r.address : "",
   phone: typeof r.phone === "string" ? r.phone : "",
   phoneHref: telHref(typeof r.phone === "string" ? r.phone : ""),
-  rating: typeof r.rating === "string" ? r.rating : "",
-  reviewCount: typeof r.reviewCount === "number" ? r.reviewCount : 0,
   lateNightNote: typeof r.lateNightNote === "string" ? r.lateNightNote : "",
   mapsUrl: typeof r.mapsUrl === "string" ? r.mapsUrl : "",
   mapsEmbedUrl: typeof r.mapsEmbedUrl === "string" ? r.mapsEmbedUrl : "",

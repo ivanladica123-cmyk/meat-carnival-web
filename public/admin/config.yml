@@ -105,8 +105,6 @@ collections:
           - { name: "name", label: "Naziv restorana", widget: "string" }
           - { name: "address", label: "Adresa", widget: "string" }
           - { name: "phone", label: "Telefon", widget: "string", hint: "Npr. 097 612 7608 — poziv se slaže automatski." }
-          - { name: "rating", label: "Google ocjena", widget: "string", required: false, hint: "Npr. 4,6 — prepišite s Google profila." }
-          - { name: "reviewCount", label: "Broj Google recenzija", widget: "number", value_type: "int", required: false }
           - { name: "lateNightNote", label: "Napomena o kasnom radu (naslovnica)", widget: "string", required: false }
           - { name: "mapsUrl", label: "Google Maps poveznica", widget: "string" }
           - { name: "mapsEmbedUrl", label: "Google Maps karta (embed)", widget: "string", required: false, hint: "Adresa karte u podnožju. Ne mijenjajte bez potrebe." }
@@ -118,7 +116,7 @@ collections:
             widget: "object"
             fields:
               - name: "unconfirmed"
-                label: "Prikaži napomenu 'podložno potvrdi'"
+                label: "Prikaži napomenu o radnom vremenu (blagdani)"
                 widget: "boolean"
                 default: false
                 required: false

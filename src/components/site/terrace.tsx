@@ -53,8 +53,8 @@ export function Terrace() {
             </table>
             {hours.placeholder && (
               <p className="text-xs text-muted-foreground">
-                * Radno vrijeme podložno potvrdi — provjerite na Googleu ili
-                nazovite prije dolaska.
+                * Radno vrijeme može se razlikovati za blagdane — provjerite na
+                Googleu ili nazovite prije dolaska.
               </p>
             )}
           </div>
